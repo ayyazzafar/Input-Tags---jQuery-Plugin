@@ -1,33 +1,18 @@
- .az_inputTags_container
- {
-     position: relative;
-     
-     &:not(.has_external_tags) .az_inputTags_tags_container
-     {
-         position: absolute;padding-right: 5px;
-     }
-     &.has_external_tags
-     {
-         .az_inputTags_tags_container
-         {
-             margin-top:5px;
-         }
-     }
-     
-        
-        &.has_add_btn{
-            input[type="text"]{
-            max-width: 81%;
-            float:left;
-            }
-            button.add {
-                float: right;
-                background-color: #FFF;
-                width: 19%;
-                border: 1px solid #CCC;
-                height: 34px;
-                border-left: 0px;
-            }
-        }
-        
- }
+.az_inputTags_container {
+  position: relative; }
+  .az_inputTags_container:not(.has_external_tags) .az_inputTags_tags_container {
+    position: absolute;
+    padding-right: 5px; }
+  .az_inputTags_container.has_external_tags .az_inputTags_tags_container {
+    margin-top: 5px; }
+  .az_inputTags_container.has_add_btn input[type="text"] {
+    max-width: 81%;
+    float: left; }
+  .az_inputTags_container.has_add_btn button.add {
+    float: right;
+    background-color: #FFF;
+    width: 19%;
+    border: 1px solid #CCC;
+    height: 34px;
+    border-left: 0px; }
+
