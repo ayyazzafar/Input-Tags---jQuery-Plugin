@@ -1,1 +1,1 @@
-# Input-Tags---jQuery-Plugin
+# Input Tags - jQuery-Plugin
