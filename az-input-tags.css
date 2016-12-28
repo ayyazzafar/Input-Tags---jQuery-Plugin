@@ -1,18 +1,86 @@
-.az_inputTags_container {
-  position: relative; }
-  .az_inputTags_container:not(.has_external_tags) .az_inputTags_tags_container {
-    position: absolute;
-    padding-right: 5px; }
-  .az_inputTags_container.has_external_tags .az_inputTags_tags_container {
-    margin-top: 5px; }
-  .az_inputTags_container.has_add_btn input[type="text"] {
-    max-width: 81%;
-    float: left; }
-  .az_inputTags_container.has_add_btn button.add {
+.tag {
+  border-radius: 2px;
+  white-space: nowrap;
+  display: inline-block;
+  border: 1px solid #066a8f;
+  padding: 0px 10px;
+  padding-right: 0px;
+  font-size: 12px;
+  color: #066a8f;
+  margin-right: 5px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  height: 23px;
+  line-height: 21px;
+  background-color: #FFF;
+  line-height: 30px;
+  padding-left: 10px;
+  height: 32px;
+  -webkit-transform: background 0.4s ease;
+  -ms-transform: background 0.4s ease;
+  -moz-transform: background 0.4s ease;
+  -o-transform: background 0.4s ease;
+  transform: background 0.4s ease; }
+  .tag.tag_only {
+    padding-right: 10px; }
+  .tag:hover {
+    background-color: #0094d3;
+    color: #FFF;
+    text-decoration: none; }
+  .tag .cross {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    line-height: 14px;
+    margin-left: 5px;
+    color: #0094d3;
+    border: 1px solid transparent;
+    width: 31px;
+    border-left: 1px solid #066a8f;
+    font-size: 14px;
+    font-weight: normal;
     float: right;
-    background-color: #FFF;
-    width: 19%;
-    border: 1px solid #CCC;
-    height: 34px;
-    border-left: 0px; }
-
+    margin-left: 10px;
+    line-height: 28px;
+    height: 30px; }
+    .tag .cross:hover {
+      color: #FFF; }
+  .tag:hover .cross {
+    color: #FFF; }
+  .tag.primary {
+    background-color: #0094d3;
+    border-color: #0094d3;
+    color: #FFF; }
+    .tag.primary:hover {
+      background-color: #FFF;
+      color: #0094d3; }
+      .tag.primary:hover .cross {
+        color: #0094d3; }
+    .tag.primary .cross {
+      color: #FFF; }
+      .tag.primary .cross:hover {
+        color: #0094d3; }
+  .tag.md {
+    padding: 0px 20px;
+    font-size: 13px;
+    padding-right: 0px;
+    margin-right: 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    height: 38px;
+    line-height: 37px; }
+    .tag.md.tag_only {
+      padding-right: 20px; }
+    .tag.md .cross {
+      width: 40px;
+      height: 36px;
+      line-height: 35px;
+      border-right: 0px;
+      border-top: 0px;
+      font-size: 16px;
+      border-bottom: 0px; }
+  .tag.sm {
+    line-height: 23px;
+    height: 23px;
+    padding-right: 10px; }
