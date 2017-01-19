@@ -167,6 +167,12 @@
      * @returns {Boolean}
      */
     this.insertTag = function(object){
+        var wrapper         = $(this).closest('.az_inputTags_container');
+        var data_input = wrapper.find(self.selector);
+        if(self.settings.max_tags>0 && (JSON.parse(data_input.val()).length >= self.settings.max_tags))
+       {
+           return false;
+       }
         console.log('#### inserting suggestion');
         console.log(object);
             object.id = parseInt(object.id);
@@ -176,8 +182,8 @@
             };
             
             
-            var wrapper         = $(this).closest('.az_inputTags_container');
-            var data_input = wrapper.find(self.selector);
+            
+            
             var visible_input = wrapper.find('.az_inputTags_input');
             var current_tags = data_input.val();
             
@@ -368,6 +374,7 @@
         wrap:'<div class="az_inputTags_container" data-selector="'+selector+'"></div>',
         wrapper_classes: '',
         tags_spacing:5, // px
+        max_tags:0,     // unlimited
         onlySuggestedTags:false,
         addBtn:false,
         input_padding_top:0,
@@ -449,14 +456,21 @@
             tags_container.on('click', function(){
                visible_input.focus(); 
             });
-            
-            visible_input.blur(function(){
-                // check if suggestion box is enabled then hide it
-                if(self.settings.suggestions.enabled)
+            $(window).on('click', function(e){
+                if(!wrapper.find('.az_input_suggestion_box').is(e.target)
+                        && wrapper.find('.az_input_suggestion_box').has(e.target).length===0
+                    &&   (e.target != $('html').get(0)))
                 {
-                    // hide suggestion box
-                    wrapper.find('.az_input_suggestion_box').slideUp();
+                    // check if suggestion box is enabled then hide it
+                    if(self.settings.suggestions.enabled)
+                    {
+                        // hide suggestion box
+                        wrapper.find('.az_input_suggestion_box').slideUp();
+                    }
                 }
+            });
+            visible_input.blur(function(){
+                
             });
             
             visible_input.keydown(function(e){
@@ -468,6 +482,7 @@
                     
                     return false;
                 }
+                // end enter key check
                if(e.which == 8 && (e.target.value.length<1)) // backspace
                 {
                     var total_tags = wrapper.find('.tag').length;
@@ -478,7 +493,9 @@
                     }
                     
                 } 
+                
             });
+            // End key down event
             visible_input.keyup(function(e) {
                  
                 var title = $(this).val();
@@ -493,6 +510,7 @@
                        
                        return false;
                    }
+                  
                    else
                    {
                        // check if searched text exists in the the suggestions
