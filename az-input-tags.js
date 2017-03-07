@@ -58,7 +58,7 @@
             if(self.settings.external_tags)
             {
                 return false;
-            }
+            }   
             var wrapper         = $(visible_input).closest('.az_inputTags_container');
             // checking if any of its parent is hidden or not 
             // if yes then we have to get measurements through its clone as hidden content does not give accurate details on fly
@@ -231,7 +231,7 @@
             
             $(visible_input).focus();
             var tags_container  = wrapper.children('.az_inputTags_tags_container');
-            var tag             =   $('<div class="tag input-tag">'+title+'<div class="no-display-transition cross fa fa-close"></div></div>');
+            var tag             =   $('<div class="tag input-tag" data-id="'+object.id+'" data-title="'+object.title+'"><span class="text">'+title+'</span><div class="no-display-transition cross fa fa-close"></div></div>');
             $('body').append(tag);
             // inserting title in original hidden input
             
