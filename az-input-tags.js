@@ -422,7 +422,7 @@
             wrapper.append('<div style="clear:both"></div>');
             // creating new input to stay visible
             
-            var visible_input = $('<input type="text" class="az_inputTags_input"  />');
+            var visible_input = $('<input type="text" class="az_inputTags_input"  autocomplete="off"  />');
             
             visible_input.addClass(input_classes);
             visible_input.attr('placeholder', input_placeholder);
